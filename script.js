@@ -1,18 +1,55 @@
-class firstScene extends Phaser.Scene {
+class FirstScene extends Phaser.Scene {
     constructor() {
-        super("firstscene");
+        super('firstscene');
     }
     create() {
-        this.add.text(10, 10, "FirstSecen");
+        //this.add.text(10,10,"Click to begin.");
+        let firstsceneSound = this.sound.add("firstscene", { loop: false });
+        let icon = this.add.image(330, 217, 'firstscene');
+
+        firstsceneSound.play();
+
+        icon.alpha = 0;
+        this.tweens.add({
+            targets: icon,
+            alpha:1,
+            duration: 5000,
+            ease: 'Linear',
+            repeat: -1,
+        });
+        
+
+        this.input.on('pointerdown', () => this.scene.start('secondscene'));
+    }
+    preload() {
+        this.load.path = './assets/';
+        this.load.image('firstscene', 'textures/TeaCabinetIcon.png');
+        this.load.audio("firstscene", ["sounds/firstscene.mp3"]);
     }
 }
 
-let secen = {
-    type: Phaser.WEBGL,
-    secen: [firstScene],
-    width: 500,
-    height: 500,
-    backgroundColor: 0xffa500
+class SecondScene extends Phaser.Scene {
+    constructor() {
+        super('secondscene');
+    }
+    create() {
+        this.add.text(10,10,"second.");
+        this.input.on('pointerdown', () => this.scene.start('thirdscene'));
+    }
 }
 
-let game = new Phaser.Game(secen);
+class ThirdScene extends Phaser.Scene {
+    constructor() {
+        super('thirdscene');
+    }
+    create() {
+        this.add.text(10,10,"third.");
+        this.input.on('pointerdown', () => this.scene.start('firstscene'));
+    }
+}
+
+new Phaser.Game({
+    width: 660,
+    height: 435,
+    scene: [FirstScene, SecondScene, ThirdScene],
+});
