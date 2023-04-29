@@ -1,5 +1,5 @@
 # TeaCabinetCinematic
-A TeaCabinet cinematic show\newline
+A TeaCabinet cinematic show\
 Four scenes: Logo Scene, Game Cut Scene, Start Menu Scene, Credit Scene\newline
 Three audio files: Logo Scene Audio, Game Cut Scene Audio, Start Menu Scene Audio\newline
 Over five image files including scene image and character image.\newline
