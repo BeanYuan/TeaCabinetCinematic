@@ -5,7 +5,7 @@ class FirstScene extends Phaser.Scene {
     create() {
         //this.add.text(10,10,"Click to begin.");
         // debug keyboard remember to delete
-        let firstsceneSound = this.sound.add("firstscene", { loop: false });
+        let firstsceneSound = this.sound.add("firstsceneSound", { loop: false });
         let icon = this.add.image(330, 217, 'firstscene');
 
         firstsceneSound.play();
@@ -26,7 +26,7 @@ class FirstScene extends Phaser.Scene {
     preload() {
         this.load.path = './assets/';
         this.load.image('firstscene', 'textures/TeaCabinet_Game.png');
-        this.load.audio("firstscene", ["sounds/firstscene.mp3"]);
+        this.load.audio("firstsceneSound", ["sounds/firstscene.mp3"]);
     }
 }
 
@@ -36,7 +36,7 @@ class SecondScene extends Phaser.Scene {
     }
     create() {
         this.add.text(10,10,"second.");
-        let secondsceneSound = this.sound.add("secondscene", { loop: true });
+        let secondsceneSound = this.sound.add("secondsceneSound", { loop: true });
         secondsceneSound.play();
 
         let scene = this.add.image(0, 217, 'secondscene'); // 330 217
@@ -71,7 +71,7 @@ class SecondScene extends Phaser.Scene {
         this.load.path = './assets/';
         this.load.image('secondscene', 'textures/game cut.png')
         this.load.image('character', 'textures/character/witcher/idle_animation.gif')
-        this.load.audio("secondscene", ["sounds/secondscene.mp3"]);
+        this.load.audio("secondsceneSound", ["sounds/secondscene.mp3"]);
     }
 }
 
@@ -80,7 +80,7 @@ class ThirdScene extends Phaser.Scene {
         super('thirdscene');
     }
     create() {
-        let thirdsceneSound = this.sound.add("thirdscene", { loop: true });
+        let thirdsceneSound = this.sound.add("thirdsceneSound", { loop: true });
         let icon = this.add.image(330, 217, 'thirdscene');
         icon.setScale(0.5);
 
@@ -106,7 +106,7 @@ class ThirdScene extends Phaser.Scene {
     preload() {
         this.load.path = './assets/';
         this.load.image('thirdscene', 'textures/start menu.png');
-        this.load.audio('thirdscene', ['sounds/thirdscene.mp3']);
+        this.load.audio('thirdsceneSound', ['sounds/thirdscene.mp3']);
     }
 }
 
