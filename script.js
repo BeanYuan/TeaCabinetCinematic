@@ -5,21 +5,6 @@ class FirstScene extends Phaser.Scene {
     create() {
         //this.add.text(10,10,"Click to begin.");
         // debug keyboard remember to delete
-        let one = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
-        one.on('down', () => {
-            this.scene.start('firstscene')
-        });
-        let two = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
-        two.on('down', () => {
-            this.scene.start('secondscene');
-            firstsceneSound.stop();
-        });
-        let three = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
-        three.on('down', () => {
-            this.scene.start('thirdscene');
-            firstsceneSound.stop();
-        });
-
         let firstsceneSound = this.sound.add("firstscene", { loop: false });
         let icon = this.add.image(330, 217, 'firstscene');
 
@@ -135,7 +120,7 @@ class FourthScene extends Phaser.Scene {
         Logo: made by Logo Maker
         Image: made by Midjourney and PhotoShop
         Audio: edited by Audacity
-        `, { fontSize: 20});
+        `, { fontSize: 20 });
     }
 }
 
